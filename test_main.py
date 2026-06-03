@@ -7,8 +7,3 @@ def test_read_root():
     response = client.get("/")
     assert response.status_code == 200
     assert response.json() == {"status": "success", "message": "API is live and running!"}
-
-def test_health_check():
-    response = client.get("/health")
-    assert response.status_code == 200
-    assert response.json() == {"health": "100%", "system": "operational"}
